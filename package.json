@@ -105,7 +105,9 @@
     "build-production": "yarn i18n && env-cmd -f .env.production react-app-rewired build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "analyze": "source-map-explorer 'build/static/js/*.js'"
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -153,6 +155,8 @@
     "react-use": "^15.3.4",
     "recharts": "^2.1.6",
     "swr": "^1.0.1",
-    "uuidv4": "^6.2.12"
-  }
+    "uuidv4": "^6.2.12",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
